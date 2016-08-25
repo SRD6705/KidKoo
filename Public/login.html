@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KidKoo Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- IMPORT jquery -->
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"
+	></script>
+
+	<script>
+    // check if the user exists and login if they do
+		function tryToLogin() {
+			$.post('/login',
+			{
+				username: $('#username').val(),
+				password: $('#password').val()
+			}, function(data) {
+				if (data === "success"){
+					document.location = "/index.html";
+				} else {
+					$('#error').html("INVALID USERNAME OR PASSWORD");
+				}
+			});
+		}
+        // on click run functions after the page is loaded
+		$(document).ready(function() {
+			$('#submit').click(tryToLogin);
+            $('#submit').mouseover(function(){
+                $('#submit').val('submit');
+            });
+            $('#submit').mouseout(function(){
+                $('#submit').val('Log In');
+            });
+        });
+	</script>
+	<!-- IMPORT Bootstrap -->
+ 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+	<!-- IMPORT external stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
+</head>
+</head>
+<body>
+<body>
+   <!-- BEGIN login area -->
+	<div class="container">
+		<div class="jumbotron"> 
+			<div class="row">
+				<div class="col-md-12" style="text-align:center;">
+	  				<p><a><img alt="./" src="./Images/kidkoo_logo_2.png"></a></p>
+	  			</div>
+	  		</div>
+	  		<div class="row">
+	  			<div class="col-md-12" style="text-align:center;">
+			  		<div class='login'>
+				        <h3>Login</h3>
+				        <input type="text" id="username" placeholder="Username" required="required"></input>
+				        <input type="password" id="password" placeholder="Password" required="required"></input> 
+				        <input type="button" id="submit" value="Submit"></input> 
+		    		</div>
+	    		</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div id="error"></div>
+    <!-- END login area -->
+</body>
+</html>
