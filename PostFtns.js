@@ -26,9 +26,7 @@ function makePost(student,emotion,date,time,post,counselor){
 
 }
 
-function showAll(){
-	
-}
+function showAll(){}
 
 
 function saveAllPost() {

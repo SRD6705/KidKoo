@@ -1,0 +1,13 @@
+.navbar {
+	// padding-top: 50px;
+	margin-top: 20px;
+}
+
+.brand {
+	padding:2em;
+
+}
+
+.links a{
+	float: right;
+}

@@ -11,15 +11,17 @@
 		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
 		crossorigin="anonymous"
 	></script>
+		
+		<link rel="stylesheet" type="text/css" href="./css/counselor.css">
 
 	<script>
     // check if the user exists and login if they do
 		function showPosts(){
 			$.get("/posts",function(data){
-				console.log(data, "i'm here");
+				console.log(data, "I'm here!");
 				});
    
-		};
+		}
         // on click run functions after the page is loaded
 		$(document).ready(function() {
 			showPosts();
@@ -35,10 +37,24 @@
 	<!-- IMPORT external stylesheets -->
     <link rel="stylesheet" type="text/css" href="./css/login.css">
 </head>
-</head>
 <body>
-<body>
+<nav class="navbar navbar-default">
+	<div class="col-md-2 brand">
+      <a href="/">
+        <img alt="./" src="./Images/kidkoo_admin_logo.png">
+      </a>
+      </div>
+      <div class="col-md-10 links">
+      	<a href="#">testing</a>
+      	<a href="#">testing</a>
+		<a href="#">testing</a>
+      </div>
+</nav>
 
-<h1>IT WORKED</h1>
+
+
+
+
+
 </body>
 </html>

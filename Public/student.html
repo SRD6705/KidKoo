@@ -7,56 +7,98 @@
 
 		    <!-- IMPORT JQuery -->
 	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-    <script src="./js/jquery.confirm.min.js"></script>
+    
     		<!-- IMPORT Bootstrap -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	 <!-- IMPORT external stylesheets -->
 	<link rel="stylesheet" type="text/css" href="./css/kidkoo_user.css">
 <style>
 
 </style>
-<script type="text/javascript"> 
-$(document).ready(function(){
-$("#popup").click(function(){
-   // pop up a text area and I want to store value of textarea in a variable.
-});
-});
-</script>
+
 </head>
 <body>
+<nav class="navbar navbar-default">
+	<div class="col-md-2 brand">
+      <a href="/">
+        <img alt="./" src="./Images/kidkoo_admin_logo.png">
+      </a>
+      </div>
+</nav>
 <div class="container ">
-
 	<div class= "row">
 		<div class= "col-md-8">
 			<div class= "icon_area">
-				<div class= "row" id= "happy">
-					<img alt="./" src="./Images/happy_icon.png" style="width:100px"><textarea placeholder="What made you happy today?"></textarea> <button class="btn btn-default" type="submit">send</button>
+				<div id="happy">
+   					<div class="closed">
+   						<img alt="./" src="./Images/happy_icon.png" style="width:100px">
+       				 	<button class="btn btn-default had_emotion">what made you happy today?</button>
+    				</div>
+  					<div class="open">
+        				<textarea class="form-control"></textarea>
+        				<button class="btn btn-warning cancel">cancel</button>
+        				<button class="btn btn-default" type="submit">send</button>
+					</div>
 				</div>
-		
-				<div class="row ">
-					<img alt="./" src="./Images/proud_icon.png" style="width:100px"><textarea placeholder="What made you proud today?"></textarea> <button class="btn btn-default" type="submit">send</button>
-
+				<div id="proud">
+   					<div class="closed">
+   						<img alt="./" src="./Images/proud_icon.png" style="width:100px">
+       				 	<button class="btn btn-default had_emotion">what made you proud today?</button>
+    				</div>
+  					<div class="open">
+        				<textarea class="form-control"></textarea>
+        				<button class="btn btn-warning cancel">cancel</button>
+        				<button class="btn btn-success">Save</button>
+        				<button class="btn btn-default" type="submit">send</button>
+					</div>
 				</div>
-				<div class="row">
-					<img alt="./" src="./Images/embarrassed_icon.png" style="width:100px"><textarea placeholder="What made you embarrassed today?"></textarea> <button class="btn btn-default" type="submit">send</button>
-
+				<div id="embarrassed">
+   					<div class="closed">
+   					<img alt="./" src="./Images/embarrassed_icon.png" style="width:100px">
+       				 	<button class="btn btn-default had_emotion">what made you embarrassed today?</button>
+    				</div>
+  					<div class="open">
+        				<textarea class="form-control"></textarea>
+        				<button class="btn btn-warning cancel">cancel</button>
+        				<button class="btn btn-default" type="submit">send</button>
+					</div>
+				</div>
+				<div id="worried">
+   					<div class="closed">
+   						<img alt="./" src="./Images/worried_icon.png" style="width:100px">
+       				 	<button class="btn btn-default had_emotion">what made you worried today?</button>
+    				</div>
+  					<div class="open">
+        				<textarea class="form-control"></textarea>
+        				<button class="btn btn-warning cancel">cancel</button>
+        				<button class="btn btn-default" type="submit">send</button>
+					</div>
+				</div>
+				<div id="sad">
+   					<div class="closed">
+   					<img alt="./" src="./Images/sad_icon.png" style="width:100px">
+       				 	<button class="btn btn-default had_emotion">what made you sad today?</button>
+    				</div>
+  					<div class="open">
+        				<textarea class="form-control"></textarea>
+        				<button class="btn btn-warning cancel">cancel</button>
+        				<button class="btn btn-default" type="submit">send</button>
+					</div>
+				</div>
+				<div id="angry">
+   					<div class="closed">
+   					<img alt="./" src="./Images/angry_icon.png" style="width:100px">
+       				 	<button class="btn btn-default had_emotion">what made you angry today?</button>
+    				</div>
+  					<div class="open">
+        				<textarea class="form-control"></textarea>
+        				<button class="btn btn-warning cancel">cancel</button>
+        				<button class="btn btn-default" type="submit">send</button>
+					</div>
 				</div>
 
-				<div class="row">
-					<img alt="./" src="./Images/worried_icon.png" style="width:100px"><textarea placeholder="What made you worried today?"></textarea> <button class="btn btn-default" type="submit">send</button>
-				</div>
-
-				<div class="row">
-			
-					<img alt="./" src="./Images/sad_icon.png" style="width:100px"><textarea placeholder="What made you sad today?"></textarea> <button class="btn btn-default float-right" type="submit">send</button>
-
-				</div>
-
-				<div class="row">
-					<img alt="./" src="./Images/angry_icon.png" style="width:100px"><textarea placeholder="What made you angry today?"></textarea> <button class="btn btn-default" type="submit">send</button>
-				</div>
 			</div>
 
 		</div><!-- ending col-md for emotions -->
@@ -122,6 +164,8 @@ $("#popup").click(function(){
 
 </div><!-- ending row for all -->
 
+
+<script src="./js/students.js"></script>
 
 </body>
 </html>
