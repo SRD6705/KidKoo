@@ -1,13 +1,28 @@
 .navbar {
 	// padding-top: 50px;
 	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .brand {
 	padding:2em;
-
 }
 
-.links a{
-	float: right;
+// .links a{
+// 	float: right;
+// }
+
+.navbar-default .navbar-right>li>a {
+    color: #36C6F4 !important;
+    font-size: 25px;
+    text-align: center;
+    padding: 2em;
+} 
+.table{
+	background-color: #F2F4F4;
+	font-weight: bold;
+	margin-right: 10px;
+	margin-left: 10px;
+
 }

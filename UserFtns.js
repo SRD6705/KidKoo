@@ -25,9 +25,18 @@ function userExists(username) {
 function checkLogin (username, password) {
 	var user = userExists(username);
 	if (user && user.password === password) {
-		return { isit: true,
-				permission: user.permission
-		};
+		if(user.permission == "student"){
+				return { isit: true,
+				permission: user.permission,
+				counselor : user.counselor
+				};
+		}else{
+			return { isit: true,
+				permission: user.permission,
+				counselorId : user.id
+				};
+		}
+	
 	}
 	return false;
 }
@@ -51,6 +60,7 @@ function registerUser(username, password) {
 	saveAllUsers();
 	return true;
 }
+
 
 /*
 	Take the entire array of users, convert it to a JSON

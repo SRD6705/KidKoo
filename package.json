@@ -1,5 +1,5 @@
 {
-  "name": "hackathon_codebase",
+  "name": "KidKoo",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -21,6 +21,7 @@
     "express": "^4.14.0",
     "express-session": "^1.14.0",
     "jquery-confirm": "^1.5.1",
+    "moment": "^2.14.1",
     "mongoose": "^4.5.8"
   },
   "devDependencies": {},

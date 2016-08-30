@@ -26,7 +26,9 @@ function makePost(student,emotion,date,time,post,counselor){
 
 }
 
-function showAll(){}
+function showPost(){
+	console.log ("show our post please");
+}
 
 
 function saveAllPost() {
@@ -43,8 +45,8 @@ function saveAllPost() {
 
 
 
-module.export = {
+module.exports = {
+	showPost: showPost,
 	makePost: makePost,
-	saveAllPost: saveAllPost,
-	showAll: showAll
-}
+	saveAllPost: saveAllPost
+};

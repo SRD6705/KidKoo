@@ -9,7 +9,18 @@ body {
 .navbar {
     // padding-top: 50px;
     margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
+.brand{
+    padding: 2em;
+}
+.navbar-default .navbar-right>li>a {
+    color: #36C6F4 !important;
+    font-size: 25px;
+    text-align: center;
+    padding: 2em;
+} 
 .jumbotron {
     height: 500px;
     /*padding-top: 10px;*/
@@ -30,9 +41,11 @@ ul {list-style-type: none;}
 body {font-family: Verdana,sans-serif;}
 
 .month {
+    margin-top: 20px;
     padding: 70px 25px;
     width: 100%;
-    background: #1abc9c;
+    background: #3BC6F3;
+    border-radius: 5px;
 }
 
 .month ul {
@@ -65,7 +78,7 @@ body {font-family: Verdana,sans-serif;}
 
 .weekdays li {
     display: inline-block;
-    width: 13.6%;
+    width: 13%;
     color: #666;
     text-align: center;
 }
@@ -79,7 +92,7 @@ body {font-family: Verdana,sans-serif;}
 .days li {
     list-style-type: none;
     display: inline-block;
-    width: 13.6%;
+    width: 13%;
     text-align: center;
     margin-bottom: 5px;
     font-size:12px;

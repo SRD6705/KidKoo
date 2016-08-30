@@ -12,3 +12,36 @@ $('.cancel').click(function(evt) {
     emotionContainer.find('.closed').show();
 });
 
+
+
+$(".ourSend").click(function(evt){
+
+	var date = $(this).parent().find('#date').val();
+	var post = $(this).parent().find('#post').val();
+	var emotion = $(this).parent().find('#emotion').val();
+
+	console.log(date, "tell me something");
+	console.log(post);
+	sendPosts(date,emotion,post);
+});
+
+
+
+
+
+
+function sendPosts(date,emotion,post){
+	$.post('/posts', 
+	{
+		date: date,
+		emotion:emotion, 
+		post: post
+
+	}, 
+	function(response){
+		if(response === "success"){
+			console.log("everythign kindof went well");
+		}
+	});
+}
+

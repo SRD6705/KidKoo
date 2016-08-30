@@ -5,9 +5,12 @@ var session = require('express-session');
 var UserFtns = require("./UserFtns.js");
 var PostFtns = require("./PostFtns.js");
 var app = express();
+var moment = require("moment");
 
 // set the port for use
 var PORT = process.env.port || 8000;
+
+var post = require("./posts.json");
 
 
 
@@ -26,23 +29,28 @@ app.use(function(req, res, next) {
 	next();
 });
 
+
+
 app.post('/posts', function(req,res){
-	var student = req.session.username;
+	var student = req.session.user;
 	var emotion = req.body.emotion;
-	var date = Date.now();
-	var time = "don't know the time";
+	var date = req.body.date;
+	var time = moment().format("h:mm a");
 	var post = req.body.post;
-	var counselor = req.body.counselor;
+	var counselor = req.session.counselor;
 	PostFtns.makePost(student,emotion,date,time,post,counselor);
 });
+
 // Display posts by date on the index page
 app.get('/posts',function(req,res){
-	var posts = PostFtns.showAll();
-	res.send();
+	var posts = PostFtns.showPost();
+	console.log(posts, "this is our post stuff");
+	res.send(post);
 });
 
 // if we want to respond to GET requests for "/"
 app.get("/", function(req, res) {
+	// console.log(req.session.user);
 	if(req.session.user && req.session.permission == "student"){
 		res.sendFile(__dirname + "/public/student.html");
 	}else if(req.session.user && req.session.permission == "counselor"){
@@ -61,9 +69,20 @@ app.get('/login', function(req, res){
 app.post('/login', function(req, res){
 	if (UserFtns.checkLogin(req.body.username, req.body.password).isit)
 	{
+		console.log(req.body.username, "i am user");
 		var permission = UserFtns.checkLogin(req.body.username, req.body.password).permission;
+
 		req.session.user = req.body.username;
 		req.session.permission = permission;
+		if(permission == "student"){
+			var id = UserFtns.checkLogin(req.body.username, req.body.password).counselor;
+			req.session.counselor = id;
+			// console.log(req.session.counselor, "student");
+		}else {
+			var id = UserFtns.checkLogin(req.body.username, req.body.password).counselorId;
+			req.session.counselorId = id;
+			// console.log(req.session.counselorId, "SEE IF THIS WORKS");
+		}
 		res.send("success");
 	}else {
 		res.send("error");
@@ -72,7 +91,7 @@ app.post('/login', function(req, res){
 
 app.get('/logout', function(req,res){
 	req.session.user = "";
-	res.redirect("/public/login.html");
+	res.redirect("/login");
 });
 
 
