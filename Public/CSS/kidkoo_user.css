@@ -32,10 +32,23 @@ body {
 	background-color: #F0B698  ;
     border-radius: 5px;
     margin-top: 20px;
+    padding: 2em;
+}
+.open{
+    text-align: center;
+    background-color: lightblue;
+
 }
 .bt-default{
 
 }
+
+
+.closed{
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+
 {box-sizing:border-box;}
 ul {list-style-type: none;}
 body {font-family: Verdana,sans-serif;}

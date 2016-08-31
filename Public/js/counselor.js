@@ -38,7 +38,7 @@
 
 
                     $('#hello').append(
-                        "<tr> <th>" + (i +1) + "</th>" +  "<th>" + data[i].date + "</th>" +  "<th>" + data[i].time + "</th>"+  "<th>" + data[i].student + "</th>"+  "<th>" + data[i].emotion + "</th>"+  "<th>" + postData + "</th> </tr>" 
+                        "<tr> <td>" + (i +1) + "</td>" +  "<td>" + data[i].date + "</td>" +  "<td>" + data[i].time + "</td>"+  "<td>" + data[i].student + "</td>"+  "<td>" + data[i].emotion + "</td>"+  "<td>" + postData + "</td> </tr>" 
                         );
                 }
                 });

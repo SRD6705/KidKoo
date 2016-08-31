@@ -20,27 +20,30 @@
 	<!-- IMPORT external stylesheets -->
     <link rel="stylesheet" type="text/css" href="./css/login.css">
 
+    	<!-- IMPORT favicon -->
     <link rel="icon" href="./Images/logo.ico/favicon-32x32.png">
-
 
 </head>
 <body>
-<nav class="navbar navbar-default">
-	<div class="col-md-2 brand">
-      <a href="/">
-        <img alt="./" src="./Images/kidkoo_admin_logo.png">
-      </a>
-     </div>
-      <ul class="nav navbar-nav navbar-right">
-      	<li>
-	      	<a href="logout">
-	      		<span class= "glyphicon glyphicon-log-in">
-	      		</span>
-	      		Logout
-	      	</a>
-      	</li>
-      </ul>
-</nav>
+<div class= "container">
+	<nav class="navbar navbar-default">
+		<div class=" navbar-brand">
+	      <a href="/">
+	        <img alt="./" src="./Images/kidkoo_admin_logo.png">
+	      </a>
+	     </div>
+	      <ul class="nav navbar-nav navbar-right">
+	      	<li>
+		      	<a href="logout">
+		      		<span class= "glyphicon glyphicon-log-in">
+		      		</span>
+		      		Logout
+		      	</a>
+	      	</li>
+	      </ul>	
+	</nav>
+</div>
+<div class= "container">
 <table class= "table table-bordered table-hover table-student-posts">
 	<tbody id="hello">
 		<tr>
@@ -49,10 +52,12 @@
 			<th> Time Posted </th>
 			<th> Student Name </th>
 			<th> Mood Posted </th>
+			<th> Content </th>
 	    </tr>
 	   
 	</tbody>
 </table>
+</div>
 
 
 <script src="./js/counselor.js"></script>

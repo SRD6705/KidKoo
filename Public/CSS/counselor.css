@@ -1,12 +1,11 @@
 .navbar {
 	// padding-top: 50px;
 	margin-top: 20px;
-	margin-left: 10px;
-	margin-right: 10px;
+
 }
 
-.brand {
-	padding:2em;
+.navbar-brand img {
+	height: 100px;
 }
 
 // .links a{
@@ -22,14 +21,12 @@
 .table{
 	background-color: #F2F4F4;
 	font-weight: bold;
-	margin-right: 10px;
-	margin-left: 10px;
 
 }
 
-u{
+u {
 	background-color: yellow;
-	
+
 
 
 }
