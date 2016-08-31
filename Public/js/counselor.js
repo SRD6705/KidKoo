@@ -1,10 +1,44 @@
+
+  var colors = ["#ff6", "#a0ffff", "#9f9", "#f99", "#f6f"];
+  var flagWords = ["hurt", "worried", "bullied", "death", "dead", "die", "kill", "depressed", "drugs", "hate", "drunk"] ; 
+
+
+  function highlitor(post, flagWords){
+    post = post.split(" ");
+    console.log(post);
+    for (var i=0; i<post.length; i++){
+        for (var j=0; j<flagWords.length; j++){
+            var lastSymbol = (post[i].length-1);
+            if (post[i][lastSymbol] == "," || post[i][lastSymbol] == "." || post[i][lastSymbol] == "!" || post[i][lastSymbol] == "?" || post[i][lastSymbol] == ">" || post[i][lastSymbol] == ";" || post[i][lastSymbol] == ":" || post[i][lastSymbol] == "#" || post[i][lastSymbol] == "$" || post[i][lastSymbol] == "()" || post[i][lastSymbol] == "<"){
+
+                    var userWord = post[i].substring(0, lastSymbol);
+                    console.log(userWord, "userword");
+                if (flagWords[j].toLowerCase()== userWord.toLowerCase()){
+                    post[i] = "<u>" + post[i] + "</u>";
+                }
+             }else {
+                if (flagWords[j].toLowerCase()== post[i].toLowerCase()){
+                    post[i] = "<u>" + post[i] + "</u>";
+                }
+             }
+        }
+    } return post.join(" ");
+  }
+
+
+
  // check if the user exists and login if they do
         function showPosts(){
             $.get("/posts",function(data){
                 // $('#hello').html('');
                 for(var i = 0; i < data.length; i++){
+
+
+                   var postData = highlitor(data[i].post, flagWords);
+
+
                     $('#hello').append(
-                        "<tr> <th>" + (i +1) + "</th>" +  "<th>" + data[i].date + "</th>" +  "<th>" + data[i].time + "</th>"+  "<th>" + data[i].student + "</th>"+  "<th>" + data[i].emotion + "</th>"+  "<th>" + data[i].post + "</th> </tr>" 
+                        "<tr> <th>" + (i +1) + "</th>" +  "<th>" + data[i].date + "</th>" +  "<th>" + data[i].time + "</th>"+  "<th>" + data[i].student + "</th>"+  "<th>" + data[i].emotion + "</th>"+  "<th>" + postData + "</th> </tr>" 
                         );
                 }
                 });

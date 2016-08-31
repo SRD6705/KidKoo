@@ -16,18 +16,16 @@ $('.cancel').click(function(evt) {
 
 $(".ourSend").click(function(evt){
 
-	var date = $(this).parent().find('#date').val();
-	var post = $(this).parent().find('#post').val();
-	var emotion = $(this).parent().find('#emotion').val();
+	var date = $(this).parent().find('.date').val();
+	var post = $(this).parent().find('.post').val();
+	var emotion = $(this).parent().find('.emotion').val();
+
+	$(this).parent().find('.post').val("");
 
 	console.log(date, "tell me something");
 	console.log(post);
 	sendPosts(date,emotion,post);
 });
-
-
-
-
 
 
 function sendPosts(date,emotion,post){
@@ -40,7 +38,7 @@ function sendPosts(date,emotion,post){
 	}, 
 	function(response){
 		if(response === "success"){
-			console.log("everythign kindof went well");
+			console.log("everythig kindof went well");
 		}
 	});
 }

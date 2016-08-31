@@ -32,6 +32,7 @@ app.use(function(req, res, next) {
 
 
 app.post('/posts', function(req,res){
+	console.log(req.session)
 	var student = req.session.user;
 	var emotion = req.body.emotion;
 	var date = req.body.date;
@@ -43,7 +44,7 @@ app.post('/posts', function(req,res){
 
 // Display posts by date on the index page
 app.get('/posts',function(req,res){
-	var posts = PostFtns.showPost();
+	var posts = PostFtns.showPost;
 	console.log(posts, "this is our post stuff");
 	res.send(post);
 });
@@ -67,6 +68,7 @@ app.get('/login', function(req, res){
 });
 
 app.post('/login', function(req, res){
+	var id;
 	if (UserFtns.checkLogin(req.body.username, req.body.password).isit)
 	{
 		console.log(req.body.username, "i am user");
@@ -75,11 +77,11 @@ app.post('/login', function(req, res){
 		req.session.user = req.body.username;
 		req.session.permission = permission;
 		if(permission == "student"){
-			var id = UserFtns.checkLogin(req.body.username, req.body.password).counselor;
+			 id = UserFtns.checkLogin(req.body.username, req.body.password).counselor.Id;
 			req.session.counselor = id;
 			// console.log(req.session.counselor, "student");
 		}else {
-			var id = UserFtns.checkLogin(req.body.username, req.body.password).counselorId;
+			id = UserFtns.checkLogin(req.body.username, req.body.password).counselorId;
 			req.session.counselorId = id;
 			// console.log(req.session.counselorId, "SEE IF THIS WORKS");
 		}

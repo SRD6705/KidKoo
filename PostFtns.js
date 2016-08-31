@@ -19,6 +19,7 @@ function makePost(student,emotion,date,time,post,counselor){
 		counselor: counselor
 	};
 
+
 	postArr.push(newPost);
 
 	saveAllPost();
@@ -26,9 +27,9 @@ function makePost(student,emotion,date,time,post,counselor){
 
 }
 
-function showPost(){
-	console.log ("show our post please");
-}
+// function showPost(){
+// 	fs.readFile
+// }
 
 
 function saveAllPost() {
@@ -46,7 +47,7 @@ function saveAllPost() {
 
 
 module.exports = {
-	showPost: showPost,
+	showPost: postArr,
 	makePost: makePost,
 	saveAllPost: saveAllPost
 };
