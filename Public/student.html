@@ -23,35 +23,36 @@
 
 </head>
 <body>
-<nav class="navbar navbar-default">
-	<div class="col-md-2 brand">
-      <a href="/">
-        <img alt="./" src="./Images/kidkoo_navbar_logo.png">
-      </a>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-	  	<li>
-	      	<a href="logout">
-	      		<span class= "glyphicon glyphicon-log-in">
-	      		</span>
-	      		Logout
-	      	</a>
-	  	</li>
-  </ul>
-	
-</nav>
+<div class= "container">
+	<nav class="navbar navbar-default">
+		<div class="col-md-2 brand">
+	      <a href="/">
+	        <img alt="./" src="./Images/kidkoo_navbar_logo.png">
+	      </a>
+	    </div>
+	    <ul class="nav navbar-nav navbar-right">
+		  	<li>
+		      	<a href="logout">
+		      		<span class= "glyphicon glyphicon-log-in">
+		      		</span>
+		      		Logout
+		      	</a>
+		  	</li>
+	  </ul>
+	</nav>
+</div>
 <div class="container ">
 	<div class= "row">
 		<div class= "col-md-8">
 			<div class= "icon_area">
 				<div id="happy">
    					<div class="closed">
-   						<img alt="./" src="./Images/happy_icon.png" style="width:100px">
+   						<img alt="./" src="./Images/happy.png" style="width:100px">
        				 	<button class="btn btn-default had_emotion">what made you happy today?</button>
     				</div>
   					<div class="open">
 							<input type="date" class="date"> 
-							<input type="text" class="emotion" value="happy">
+							<input type="text" class="emotion" value="Happy">
 		    				<textarea class="form-control post"></textarea>
 		    				<button class="btn btn-warning cancel">cancel</button>
 		    				<button class="btn btn-success">Save</button>
@@ -60,12 +61,12 @@
 				</div>
 				<div class="proud">
    					<div class="closed">
-   						<img alt="./" src="./Images/proud_icon.png" style="width:100px">
+   						<img alt="./" src="./Images/proud.png" style="width:100px">
        				 	<button class="btn btn-default had_emotion ">what made you proud today?</button>
     				</div>
   					<div class="open">
   							<input type="date" class="date"> 
-  							<input type="text" class="emotion" value="proud">
+  							<input type="text" class="emotion" value="Proud">
 	        				<textarea class="form-control post"></textarea>
 	        				<button class="btn btn-warning cancel">cancel</button>
 	        				<button class="btn btn-success">Save</button>
@@ -79,7 +80,7 @@
     				</div>
   					<div class="open">
   							<input type="date" class="date"> 
-  							<input type="text" class="emotion" value="disappointed">
+  							<input type="text" class="emotion" value="Disappointed">
 	        				<textarea class="form-control post"></textarea>
 	        				<button class="btn btn-warning cancel">cancel</button>
 	        				<button class="btn btn-success">Save</button>
@@ -93,7 +94,7 @@
     				</div>
   					<div class="open">
   							<input type="date" class="date"> 
-  							<input type="text" class="emotion" value="worried">
+  							<input type="text" class="emotion" value=Worried">
 	        				<textarea class="form-control post"></textarea>
 	        				<button class="btn btn-warning cancel">cancel</button>
 	        				<button class="btn btn-success">Save</button>
@@ -107,7 +108,7 @@
     				</div>
   					<div class="open">
   							<input type="date" class="date"> 
-  							<input type="text" class="emotion" value="sad">
+  							<input type="text" class="emotion" value="Sad">
 	        				<textarea class="form-control post"></textarea>
 	        				<button class="btn btn-warning cancel">cancel</button>
 	        				<button class="btn btn-success">Save</button>
@@ -121,7 +122,7 @@
     				</div>
   					<div class="open">
   							<input type="date" class="date"> 
-  							<input type="text" class="emotion" value="angry">
+  							<input type="text" class="emotion" value="Angry">
 	        				<textarea class="form-control post"></textarea>
 	        				<button class="btn btn-warning cancel">cancel</button>
 	        				<button class="btn btn-success">Save</button>
@@ -140,7 +141,7 @@
 			    <li class="prev">❮</li>
 			    <li class="next">❯</li>
 			    <li style="text-align:center">
-			      August<br>
+			      September<br>
 			      <span style="font-size:18px">2016</span>
 			    </li>
 			  </ul>
@@ -157,7 +158,10 @@
 			</ul>
 
 			<ul class="days">
-			  <li>1</li>
+			  <li></li>
+			  <li></li>
+			  <li></li>
+			  <li><span class="active">1</span></li>
 			  <li>2</li>
 			  <li>3</li>
 			  <li>4</li>
@@ -166,7 +170,7 @@
 			  <li>7</li>
 			  <li>8</li>
 			  <li>9</li>
-			  <li><span class="active">10</span></li>
+			  <li>10</li>
 			  <li>11</li>
 			  <li>12</li>
 			  <li>13</li>
@@ -187,7 +191,6 @@
 			  <li>28</li>
 			  <li>29</li>
 			  <li>30</li>
-			  <li>31</li>
 			</ul>		</div>
 
 	</div><!-- eding col-md!!!!!! for calendar -->

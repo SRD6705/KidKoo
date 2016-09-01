@@ -38,7 +38,7 @@ function sendPosts(date,emotion,post){
 	}, 
 	function(response){
 		if(response === "success"){
-			console.log("everythig kindof went well");
+			console.log("everything kind of went well");
 		}
 	});
 }

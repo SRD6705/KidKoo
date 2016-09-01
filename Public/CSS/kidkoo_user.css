@@ -9,8 +9,7 @@ body {
 .navbar {
     // padding-top: 50px;
     margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+ 
 }
 .brand{
     padding: 2em;
@@ -42,11 +41,16 @@ body {
 .bt-default{
 
 }
-
+.had_emotion{
+    font-weight: bold;
+}
 
 .closed{
     background-color: lightgrey;
     border-radius: 5px;
+}
+.emotion{
+    font-weight: bold;
 }
 
 {box-sizing:border-box;}

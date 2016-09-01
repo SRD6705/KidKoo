@@ -45,7 +45,7 @@ app.post('/posts', function(req,res){
 // Display posts by date on the index page
 app.get('/posts',function(req,res){
 	var posts = PostFtns.showPost;
-	console.log(posts, "this is our post stuff");
+	// console.log(posts, "this is our post stuff");
 	res.send(post);
 });
 
