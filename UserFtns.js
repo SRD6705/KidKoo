@@ -28,7 +28,7 @@ function checkLogin (username, password) {
 		if(user.permission == "student"){
 				return { isit: true,
 				permission: user.permission,
-				counselor : user.counselor
+				counselorId : user.counselor
 				};
 		}else{
 			return { isit: true,

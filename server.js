@@ -10,7 +10,7 @@ var moment = require("moment");
 // set the port for use
 var PORT = process.env.port || 8000;
 
-var post = require("./posts.json");
+
 
 
 
@@ -32,21 +32,23 @@ app.use(function(req, res, next) {
 
 
 app.post('/posts', function(req,res){
-	console.log(req.session)
+	console.log(req.session);
 	var student = req.session.user;
 	var emotion = req.body.emotion;
 	var date = req.body.date;
 	var time = moment().format("h:mm a");
 	var post = req.body.post;
-	var counselor = req.session.counselor;
+	var counselor = req.session.counselorId;
+	console.log(req.session.counselorId);
 	PostFtns.makePost(student,emotion,date,time,post,counselor);
 });
 
 // Display posts by date on the index page
 app.get('/posts',function(req,res){
-	var posts = PostFtns.showPost;
+	var posts = PostFtns.getAllPosts();
+	console.log(posts);
 	// console.log(posts, "this is our post stuff");
-	res.send(post);
+	res.send(posts);
 });
 
 // if we want to respond to GET requests for "/"
@@ -77,8 +79,8 @@ app.post('/login', function(req, res){
 		req.session.user = req.body.username;
 		req.session.permission = permission;
 		if(permission == "student"){
-			 id = UserFtns.checkLogin(req.body.username, req.body.password).counselor.Id;
-			req.session.counselor = id;
+			 id = UserFtns.checkLogin(req.body.username, req.body.password).counselorId;
+			req.session.counselorId = id;
 			// console.log(req.session.counselor, "student");
 		}else {
 			id = UserFtns.checkLogin(req.body.username, req.body.password).counselorId;

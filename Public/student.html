@@ -54,6 +54,17 @@
 							<input type="date" class="date"> 
 							<input type="text" class="emotion" value="Happy">
 		    				<textarea class="form-control post"></textarea>
+
+							 <div class="tools">
+  <a href="#colors_sketch" data-download="png" style="float: right; width: 100px;">Download</a>
+							</div>
+<canvas id="tools_sketch" width="500" height="300" style="border: 2px solid black"></canvas>
+							<div class="tools">
+							  <a href="#tools_sketch" data-tool="marker">Marker</a>
+							  <a href="#tools_sketch" data-tool="eraser">Eraser</a>
+							</div>
+
+
 		    				<button class="btn btn-warning cancel">cancel</button>
 		    				<button class="btn btn-success">Save</button>
 		    				<button class="btn btn-default ourSend" >send</button>
@@ -196,9 +207,27 @@
 	</div><!-- eding col-md!!!!!! for calendar -->
 
 </div><!-- ending row for all -->
-
-
+<script type="text/javascript">
+  $(function() {
+    $('#tools_sketch').sketch({defaultColor: "#ff0"});
+  });
+</script>
+<script src="./js/canvas.js"></script>
 <script src="./js/students.js"></script>
+
+<script type="text/javascript">
+  $(function() {
+    $.each(['#f00', '#ff0', '#0f0', '#0ff', '#00f', '#f0f', '#000', '#fff'], function() {
+      $('#colors_demo .tools').append("<a href='#colors_sketch' data-color='" + this + "' style='width: 10px; background: " + this + ";'></a> ");
+    });
+    $.each([3, 5, 10, 15], function() {
+      $('#colors_demo .tools').append("<a href='#colors_sketch' data-size='" + this + "' style='background: #ccc'>" + this + "</a> ");
+    });
+    $('#colors_sketch').sketch();
+  });
+</script>
+
+
 
 </body>
 </html>

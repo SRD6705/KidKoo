@@ -35,7 +35,7 @@
 
 
                    var postData = highlitor(data[i].post, flagWords);
-
+                 console.log(data);
 
                     $('#hello').append(
                         "<tr> <td>" + (i +1) + "</td>" +  "<td>" + data[i].date + "</td>" +  "<td>" + data[i].time + "</td>"+  "<td>" + data[i].student + "</td>"+  "<td>" + data[i].emotion + "</td>"+  "<td>" + postData + "</td> </tr>" 

@@ -44,10 +44,12 @@ function saveAllPost() {
 	);
 }
 
-
+function getAllPosts(){
+	return postArr;
+}
 
 module.exports = {
-	showPost: postArr,
+	getAllPosts: getAllPosts,
 	makePost: makePost,
 	saveAllPost: saveAllPost
 };

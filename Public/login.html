@@ -30,12 +30,8 @@
         // on click run functions after the page is loaded
 		$(document).ready(function() {
 			$('#submit').click(tryToLogin);
-            $('#submit').mouseover(function(){
-                $('#submit').val('submit');
-            });
-            $('#submit').mouseout(function(){
-                $('#submit').val('Log In');
-            });
+            
+            
         });
 	</script>
 	<!-- IMPORT Bootstrap -->
@@ -62,7 +58,7 @@
 				        <h3>Login</h3>
 				        <input type="text" id="username" placeholder="Username" required="required"></input>
 				        <input type="password" id="password" placeholder="Password" required="required"></input> 
-				        <input type="button" id="submit" value="Submit"></input> 
+				        <input type="button" id="submit" value="Login"></input> 
 		    		</div>
 	    		</div>
 	    	</div>

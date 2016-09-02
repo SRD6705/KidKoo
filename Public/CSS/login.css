@@ -38,13 +38,9 @@ input {
     font-size: 13px;
     border: 1px solid rgba(0,0,0,0.5);
     border-radius: 4px;
+    color: black;
 }
-input[type=text]{
-    color: #AAAAAA;
-}
-input[type=text]:focus {
-    color: #CCCCCC;
-}
+
 input#username, input#password {
     margin-bottom: 10px;
 }
